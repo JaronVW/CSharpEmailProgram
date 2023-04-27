@@ -40,6 +40,7 @@ public class EmailServer
                     To = msg.To.ToString(),
                     Subject = msg.Subject,
                     HtmlBody = msg.HtmlBody,
+                    TextBody = msg.Body,
                     Priority = msg.Priority.ToString()
                 });
             }

@@ -16,6 +16,7 @@ class Program
             Console.WriteLine($"To: {email.To}");
             Console.WriteLine($"Subject: {email.Subject}");
             Console.WriteLine($"Priority: {email.Priority}");
+            Console.WriteLine($"TextBody: {email.TextBody}");
             Console.WriteLine();
        
         }

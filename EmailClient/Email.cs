@@ -6,5 +6,6 @@ public class Email
     public string To { get; set; } = null!;
     public string Subject { get; set; } = null!;
     public string HtmlBody { get; set; } = null!;
+    public string TextBody { get; set; } = null!;
     public string Priority { get; set; } = null!;
 }
