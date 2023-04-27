@@ -31,11 +31,13 @@
                 FontSize="22"
                 Margin="20,0,0,0">
             </TextBlock>
-            
-            <StackPanel Grid.Row="1">
+
+            <StackPanel Grid.Row="1" Grid.Column="0">
                 <RadioButton Content="View Emails"
                              FontSize="14"
-                             Height="50"/>
+                             Height="50"
+                             Foreground="Black"
+                             Style="{StaticResource MenuButtonTheme}" />
             </StackPanel>
         </Grid>
     </Border>

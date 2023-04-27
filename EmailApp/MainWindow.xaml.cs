@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+using EmailClient;
 
 namespace EmailApp
 {
@@ -20,8 +22,13 @@ namespace EmailApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private EmailServer server;
+
         public MainWindow()
         {
+            var email = ConfigurationManager.ConnectionStrings["email"].ConnectionString;
+            var password = ConfigurationManager.ConnectionStrings["password"].ConnectionString;
+            server = new EmailServer("smtp.office365.com", "outlook.office365.com", email, password);
             InitializeComponent();
         }
     }
