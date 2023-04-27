@@ -24,11 +24,15 @@ public class EmailServer
 
     public List<Email> RetrieveEmails(int numberOfMails)
     {
+        if(NumberOfMailInInbox() < numberOfMails)
+            numberOfMails = NumberOfMailInInbox();
         try
         {
+            
             var emails = new List<Email>();
-            for (var i = 0; i < numberOfMails; i++)
+            for (var i = 1; i <= numberOfMails; i++)
             {
+                _imapClient.SelectFolder("Inbox");
                 var msg = _imapClient.FetchMessage(i);
                 emails.Add(new Email()
                 {
@@ -50,6 +54,13 @@ public class EmailServer
         return new List<Email>();
     }
 
+    public int NumberOfMailInInbox()
+    {
+        return _imapClient.ListMessages("Inbox").Count;
+    }
+
+  
+
     public bool SendEmail(Email email)
     {
         try
@@ -63,7 +74,7 @@ public class EmailServer
             _smtpClient.Send(msg);
             return true;
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Console.WriteLine(e);
             return false;

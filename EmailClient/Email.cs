@@ -2,9 +2,9 @@
 
 public class Email
 {
-    public string From { get; set; }
-    public string To { get; set; }
-    public string Subject { get; set; }
-    public string HtmlBody { get; set; }
-    public string Priority { get; set; }
+    public string From { get; set; } = null!;
+    public string To { get; set; } = null!;
+    public string Subject { get; set; } = null!;
+    public string HtmlBody { get; set; } = null!;
+    public string Priority { get; set; } = null!;
 }
